@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ernesto & Cacilda | Nosso Casamento</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond (Elegante/Editorial) e Plus Jakarta Sans (Moderna/Limpa) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Configuração personalizada do Tailwind para Modo Dia/Noite e Fontes -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        wedding: {
+                            gold: '#C5A059',
+                            goldHover: '#B08D46',
+                            cream: '#FAF8F5',
+                            darkBg: '#121110',
+                            darkCard: '#1C1A18'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Suavização de transições de tema e efeitos visuais */
+        body {
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        
+        .image-zoom {
+            transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .group:hover .image-zoom {
+            transform: scale(1.04);
+        }
+
+        /* Esconder scrollbar no modal */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-wedding-cream text-stone-800 dark:bg-wedding-darkBg dark:text-stone-100 font-sans antialiased selection:bg-wedding-gold selection:text-white">
+
+    <!-- ==================== NAVEGAÇÃO SUPERIOR ==================== -->
+    <header class="fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-white/80 dark:bg-wedding-darkBg/80 backdrop-blur-md border-b border-stone-200/60 dark:border-stone-800/60">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+            <!-- Monograma / Nomes -->
+            <a href="#inicio" class="font-serif text-2xl sm:text-3xl font-semibold tracking-wide text-stone-900 dark:text-stone-100 flex items-center gap-2">
+                <span>E</span>
+                <span class="text-wedding-gold italic font-normal">&</span>
+                <span>C</span>
+            </a>
+
+            <!-- Links Rápidos (Desktop) e Ações -->
+            <div class="flex items-center gap-3 sm:gap-6">
+                <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-stone-600 dark:text-stone-300">
+                    <a href="#historia" class="hover:text-wedding-gold transition-colors">Dedicatórias</a>
+                    <a href="#galeria" class="hover:text-wedding-gold transition-colors">Galeria</a>
+                    <a href="#download" class="hover:text-wedding-gold transition-colors">Baixar Fotos</a>
+                </nav>
+
+                <!-- Botão Modo Dia / Noite -->
+                <button id="theme-toggle" aria-label="Alternar Modo Dia e Noite" class="p-2.5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-amber-300 hover:bg-stone-200 dark:hover:bg-stone-700 transition-all shadow-sm">
+                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+                </button>
+
+                <!-- Botão Compacto de Download no Topo -->
+                <a href="https://drive.google.com/drive/folders/1jtZzXqj7zwkEfxYJgSqKYUon8i7_mVRv?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-wedding-gold hover:bg-wedding-goldHover text-white text-xs sm:text-sm font-medium transition-all shadow-sm hover:shadow">
+                    <i data-lucide="download" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Baixar Álbum</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== 1. CAPA PRINCIPAL (HERO) ==================== -->
+    <!-- Foto ID: 1oA6X3XqlWsneFPR-gzspvsGBVO2PDboa -->
+    <section id="inicio" class="relative w-full h-[92vh] min-h-[600px] flex items-center justify-center overflow-hidden pt-16">
+        <!-- Imagem de Fundo do Google Drive -->
+        <img 
+            src="https://lh3.googleusercontent.com/d/1oA6X3XqlWsneFPR-gzspvsGBVO2PDboa=w1920" 
+            onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1oA6X3XqlWsneFPR-gzspvsGBVO2PDboa&sz=w1920';"
+            alt="Ernesto e Cacilda" 
+            class="absolute inset-0 w-full h-full object-cover object-center scale-105 animate-[pulse_20s_ease-in-out_infinite]"
+        />
+        
+        <!-- Sobreposição Escura Elegante para Legibilidade -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/75"></div>
+
+        <!-- Conteúdo Sobreposto -->
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white space-y-6">
+            <p class="uppercase tracking-[0.3em] text-xs sm:text-sm text-amber-200/90 font-medium">
+                Memórias Eternas • Álbum Oficial
+            </p>
+            
+            <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl font-normal tracking-tight leading-tight drop-shadow-md">
+                Ernesto <span class="italic text-wedding-gold font-light">&</span> Cacilda
+            </h1>
+            
+            <div class="w-24 h-[1px] bg-wedding-gold/80 mx-auto"></div>
+            
+            <p class="font-serif italic text-xl sm:text-2xl md:text-3xl text-stone-100/95 max-w-2xl mx-auto leading-relaxed font-light drop-shadow">
+                “O amor não consiste em olhar um para o outro, mas sim em olhar juntos na mesma direção. Que este dia seja o início da mais linda eternidade.”
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://drive.google.com/drive/folders/1jtZzXqj7zwkEfxYJgSqKYUon8i7_mVRv?usp=sharing" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full bg-wedding-gold hover:bg-wedding-goldHover text-white font-medium transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                    <i data-lucide="folder-down" class="w-5 h-5"></i>
+                    <span>Baixar Todas as Fotos</span>
+                </a>
+                <a href="#galeria" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white/15 hover:bg-white/25 backdrop-blur-sm border border-white/30 text-white font-medium transition-all">
+                    <span>Ver Prévia do Álbum</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Indicador de Rolagem -->
+        <a href="#historia" aria-label="Rolar para baixo" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/75 hover:text-white animate-bounce">
+            <i data-lucide="chevron-down" class="w-7 h-7"></i>
+        </a>
+    </section>
+
+    <!-- ==================== 2. SEÇÃO DEDICATÓRIAS (NOIVA, CASAL, NOIVO) ==================== -->
+    <section id="historia" class="py-20 sm:py-28 px-4 sm:px-6 max-w-6xl mx-auto space-y-24 sm:space-y-32">
+        
+        <!-- BLOCO 1: FOTO DO LADO DIREITO + FRASE PARA A NOIVA -->
+        <!-- Foto ID: 1WctcoeWPK90vk9efcq1eEi72DHnL_3gU -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <!-- Texto à Esquerda -->
+            <div class="lg:col-span-6 space-y-6 order-2 lg:order-1 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-wedding-gold text-xs font-semibold uppercase tracking-widest">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                    <span>Para a Noiva • Cacilda</span>
+                </div>
+                
+                <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-stone-900 dark:text-white leading-tight">
+                    A luz e a doçura deste grande dia
+                </h2>
+                
+                <p class="text-stone-600 dark:text-stone-300 text-lg leading-relaxed font-light">
+                    “Cacilda, o teu sorriso iluminou cada instante desta celebração. Com elegância, ternura e um brilho único nos olhos, tornaste cada fotografia o reflexo mais puro da felicidade e da graça.”
+                </p>
+
+                <div class="pt-2">
+                    <span class="font-serif italic text-xl text-wedding-gold">— Radiante em cada detalhe</span>
+                </div>
+            </div>
+
+            <!-- Foto à Direita -->
+            <div class="lg:col-span-6 order-1 lg:order-2">
+                <div class="group relative rounded-2xl overflow-hidden shadow-2xl bg-stone-200 dark:bg-stone-800 aspect-[4/5] sm:aspect-[4/4]">
+                    <img 
+                        src="https://lh3.googleusercontent.com/d/1WctcoeWPK90vk9efcq1eEi72DHnL_3gU=w1200" 
+                        onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1WctcoeWPK90vk9efcq1eEi72DHnL_3gU&sz=w1200';"
+                        alt="Cacilda - A Noiva" 
+                        class="w-full h-full object-cover image-zoom cursor-pointer"
+                        onclick="openLightbox('1WctcoeWPK90vk9efcq1eEi72DHnL_3gU', 'Para a Noiva — Cacilda')"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOCO 2: FOTO DO LADO ESQUERDO + FRASE PARA OS NOIVOS -->
+        <!-- Foto ID: 1_fPyqluoAl5RSiCJr-nPoJLyVpgDLpwq -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <!-- Foto à Esquerda -->
+            <div class="lg:col-span-6">
+                <div class="group relative rounded-2xl overflow-hidden shadow-2xl bg-stone-200 dark:bg-stone-800 aspect-[4/5] sm:aspect-[4/4]">
+                    <img 
+                        src="https://lh3.googleusercontent.com/d/1_fPyqluoAl5RSiCJr-nPoJLyVpgDLpwq=w1200" 
+                        onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1_fPyqluoAl5RSiCJr-nPoJLyVpgDLpwq&sz=w1200';"
+                        alt="Ernesto e Cacilda - Os Noivos" 
+                        class="w-full h-full object-cover image-zoom cursor-pointer"
+                        onclick="openLightbox('1_fPyqluoAl5RSiCJr-nPoJLyVpgDLpwq', 'Para os Noivos — Ernesto & Cacilda')"
+                    />
+                </div>
+            </div>
+
+            <!-- Texto à Direita -->
+            <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-wedding-gold text-xs font-semibold uppercase tracking-widest">
+                    <i data-lucide="heart" class="w-3.5 h-3.5"></i>
+                    <span>Para os Noivos • Ernesto & Cacilda</span>
+                </div>
+                
+                <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-stone-900 dark:text-white leading-tight">
+                    Duas vidas, um só propósito
+                </h2>
+                
+                <p class="text-stone-600 dark:text-stone-300 text-lg leading-relaxed font-light">
+                    “Que a cumplicidade que vocês compartilharam no altar seja a base firme de todos os seus dias. Que nunca faltem motivos para celebrar, mãos dadas nas tempestades e risos fáceis nas manhãs de sol.”
+                </p>
+
+                <div class="pt-2">
+                    <span class="font-serif italic text-xl text-wedding-gold">— Unidos pelo amor verdadeiro</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- BLOCO 3: FOTO COM MENSAGEM PARA O NOIVO -->
+        <!-- Foto ID: 1eZV1jO77V7IXD3DEChRpVM4WdetpnhSh -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <!-- Texto à Esquerda -->
+            <div class="lg:col-span-6 space-y-6 order-2 lg:order-1 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 text-wedding-gold text-xs font-semibold uppercase tracking-widest">
+                    <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                    <span>Para o Noivo • Ernesto</span>
+                </div>
+                
+                <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-stone-900 dark:text-white leading-tight">
+                    Firmeza, carinho e devoção
+                </h2>
+                
+                <p class="text-stone-600 dark:text-stone-300 text-lg leading-relaxed font-light">
+                    “Ernesto, o teu olhar de admiração e orgulho ao ver a Cacilda entrar disse tudo o que palavras jamais conseguiriam expressar. Que sejas sempre o porto seguro, o melhor amigo e o companheiro de todas as horas.”
+                </p>
+
+                <div class="pt-2">
+                    <span class="font-serif italic text-xl text-wedding-gold">— Um compromisso para toda a vida</span>
+                </div>
+            </div>
+
+            <!-- Foto à Direita -->
+            <div class="lg:col-span-6 order-1 lg:order-2">
+                <div class="group relative rounded-2xl overflow-hidden shadow-2xl bg-stone-200 dark:bg-stone-800 aspect-[4/5] sm:aspect-[4/4]">
+                    <img 
+                        src="https://lh3.googleusercontent.com/d/1eZV1jO77V7IXD3DEChRpVM4WdetpnhSh=w1200" 
+                        onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1eZV1jO77V7IXD3DEChRpVM4WdetpnhSh&sz=w1200';"
+                        alt="Ernesto - O Noivo" 
+                        class="w-full h-full object-cover image-zoom cursor-pointer"
+                        onclick="openLightbox('1eZV1jO77V7IXD3DEChRpVM4WdetpnhSh', 'Para o Noivo — Ernesto')"
+                    />
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ==================== 3. PEQUENA GALERIA DE MOMENTOS ==================== -->
+    <section id="galeria" class="py-20 sm:py-28 bg-stone-100/80 dark:bg-wedding-darkCard/60 border-y border-stone-200/70 dark:border-stone-800/70">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            
+            <!-- Cabeçalho da Galeria -->
+            <div class="text-center max-w-2xl mx-auto mb-14 space-y-4">
+                <span class="text-wedding-gold text-xs font-semibold uppercase tracking-[0.25em]">Destaques do Dia</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-stone-900 dark:text-white">
+                    Galeria de Momentos
+                </h2>
+                <p class="text-stone-600 dark:text-stone-400 font-light">
+                    Uma pequena seleção especial dos instantes capturados. Clique em qualquer fotografia para ampliar.
+                </p>
+            </div>
+
+            <!-- Grid Responsivo das 10 Fotos da Galeria -->
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+                <!-- Preenchido via JavaScript com os IDs exatos fornecidos -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== 4. ÁREA DE DOWNLOAD (GOOGLE DRIVE) ==================== -->
+    <section id="download" class="py-20 sm:py-28 px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto rounded-3xl bg-white dark:bg-wedding-darkCard border border-stone-200 dark:border-stone-800 p-8 sm:p-14 text-center shadow-xl relative overflow-hidden">
+            
+            <!-- Detalhe Decorativo -->
+            <div class="w-16 h-16 rounded-2xl bg-amber-500/10 text-wedding-gold flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="cloud-download" class="w-8 h-8"></i>
+            </div>
+
+            <h2 class="font-serif text-3xl sm:text-5xl font-semibold text-stone-900 dark:text-white mb-4">
+                Álbum Completo em Alta Resolução
+            </h2>
+            
+            <p class="text-stone-600 dark:text-stone-300 max-w-xl mx-auto text-base sm:text-lg font-light leading-relaxed mb-8">
+                Todas as fotografias editadas do casamento de <strong class="font-medium text-stone-900 dark:text-white">Ernesto & Cacilda</strong> estão organizadas e prontas para download direto na pasta oficial do Google Drive.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a 
+                    href="https://drive.google.com/drive/folders/1jtZzXqj7zwkEfxYJgSqKYUon8i7_mVRv?usp=sharing" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-wedding-gold hover:bg-wedding-goldHover text-white font-semibold text-base transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                >
+                    <i data-lucide="download" class="w-5 h-5"></i>
+                    <span>Acessar Pasta e Baixar Fotos</span>
+                </a>
+
+                <button 
+                    onclick="copyDriveLink()"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 font-medium text-sm transition-all"
+                >
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                    <span id="copy-btn-text">Copiar Link do Álbum</span>
+                </button>
+            </div>
+
+            <p class="mt-6 text-xs text-stone-400 dark:text-stone-500">
+                Dica: No Google Drive, clique nos três pontinhos ou no nome da pasta e selecione “Fazer download” para baixar tudo de uma só vez.
+            </p>
+        </div>
+    </section>
+
+    <!-- ==================== 5. FOTO FINAL COM FRASE SOBREPOSTA ==================== -->
+    <!-- Foto ID: 1FhueCwtW1xMOJ4TZJT2vdt2G80npf27j -->
+    <section class="relative w-full h-[75vh] min-h-[480px] flex items-center justify-center overflow-hidden">
+        <img 
+            src="https://lh3.googleusercontent.com/d/1FhueCwtW1xMOJ4TZJT2vdt2G80npf27j=w1920" 
+            onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1FhueCwtW1xMOJ4TZJT2vdt2G80npf27j&sz=w1920';"
+            alt="Ernesto e Cacilda - Para Sempre" 
+            class="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        
+        <!-- Sobreposição Escura -->
+        <div class="absolute inset-0 bg-black/55"></div>
+
+        <!-- Frase Final Sobreposta -->
+        <div class="relative z-10 max-w-3xl mx-auto px-6 text-center text-white space-y-5">
+            <i data-lucide="heart" class="w-8 h-8 text-wedding-gold mx-auto fill-wedding-gold/40"></i>
+            <blockquote class="font-serif italic text-2xl sm:text-4xl md:text-5xl font-normal leading-snug drop-shadow-md">
+                “E assim começa o capítulo mais bonito das nossas vidas. Obrigado a todos que fizeram parte deste sonho.”
+            </blockquote>
+            <p class="uppercase tracking-[0.25em] text-xs sm:text-sm text-amber-200 font-medium pt-2">
+                Com amor, Ernesto & Cacilda
+            </p>
+        </div>
+    </section>
+
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer class="py-8 px-4 text-center text-sm text-stone-500 dark:text-stone-400 bg-white dark:bg-wedding-darkBg border-t border-stone-200 dark:border-stone-800">
+        <p class="font-serif text-lg text-stone-800 dark:text-stone-200 mb-1">Ernesto & Cacilda</p>
+        <p class="text-xs">Álbum Digital de Casamento • Todos os direitos reservados</p>
+    </footer>
+
+    <!-- ==================== MODAL LIGHTBOX (AMPLIAR FOTO) ==================== -->
+    <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/95 backdrop-blur-sm flex items-center justify-center p-4" onclick="closeLightbox(event)">
+        <button onclick="closeLightbox(event, true)" aria-label="Fechar visualização" class="absolute top-5 right-5 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+
+        <!-- Botão Anterior -->
+        <button onclick="navigateLightbox(-1, event)" aria-label="Foto anterior" class="absolute left-3 sm:left-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors">
+            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+        </button>
+
+        <div class="max-w-5xl max-h-[88vh] flex flex-col items-center justify-center" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="Visualização ampliada" class="max-h-[78vh] w-auto max-w-full rounded-xl object-contain shadow-2xl" />
+            <p id="lightbox-caption" class="text-stone-300 font-serif italic text-lg mt-4 text-center"></p>
+        </div>
+
+        <!-- Botão Próxima -->
+        <button onclick="navigateLightbox(1, event)" aria-label="Próxima foto" class="absolute right-3 sm:right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors">
+            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+        </button>
+    </div>
+
+    <!-- ==================== SCRIPTS DE INTERATIVIDADE ==================== -->
+    <script>
+        // Inicializar ícones Lucide
+        lucide.createIcons();
+
+        // 1. GERENCIAMENTO DE MODO DIA E NOITE
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        // Verificar preferência salva ou preferência do sistema
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // 2. LISTA DAS 10 FOTOS DA GALERIA (IDs extraídos dos iframes fornecidos)
+        const galleryPhotos = [
+            { id: '1s4iMcrhnbcKDBdh8YOtQH_LBaRsyV9jK', title: 'Momento Especial 01' },
+            { id: '1xl9qvISFgiXJXbE8TsHH884lemXMoxE5', title: 'Momento Especial 02' },
+            { id: '1FBvnrbuxS2Nrw-1XAZO1zaeFuI1MQDEv', title: 'Momento Especial 03' },
+            { id: '1hRrLkrANiJYn02bxyWciTs_jzH82VaXE', title: 'Momento Especial 04' },
+            { id: '14ypEFmDVw8wn1SwADzdb0kDMfmlAfiEm', title: 'Momento Especial 05' },
+            { id: '1wn6WRPruuFKrcaAlFOEw5YeIpnBHqqbE', title: 'Momento Especial 06' },
+            { id: '168DOQ1ggUmQiPZ4Dryu-E31rYZiIP7Gr', title: 'Momento Especial 07' },
+            { id: '1V0t5JywlvGoO63EH_q8Lko9SJNIS1tZD', title: 'Momento Especial 08' },
+            { id: '1xF2q0_ByfQVyOOFMhhPz-Pl7PxEM03nO', title: 'Momento Especial 09' },
+            { id: '13aO35Pmvf1qfsqlToqVMNrM8tCrhJet7', title: 'Momento Especial 10' }
+        ];
+
+        const galleryGrid = document.getElementById('gallery-grid');
+        let currentPhotoIndex = 0;
+
+        // Renderizar cards da galeria
+        galleryPhotos.forEach((photo, index) => {
+            const card = document.createElement('div');
+            // Faz a última foto ocupar 2 colunas em telas grandes para equilibrar o grid de 10 itens
+            const spanClass = index === 9 ? 'sm:col-span-2 lg:col-span-2 aspect-[16/10]' : 'aspect-[4/5]';
+            
+            card.className = `group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl bg-stone-200 dark:bg-stone-800 cursor-pointer transition-all duration-300 ${spanClass}`;
+            card.onclick = () => openLightboxByIndex(index);
+
+            card.innerHTML = `
+                <img 
+                    src="https://lh3.googleusercontent.com/d/${photo.id}=w900" 
+                    onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=${photo.id}&sz=w900';"
+                    alt="Ernesto e Cacilda - ${photo.title}" 
+                    loading="lazy"
+                    class="w-full h-full object-cover image-zoom"
+                />
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-end p-5">
+                    <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center gap-2 text-white text-sm font-medium bg-black/40 backdrop-blur-sm px-3.5 py-1.5 rounded-full">
+                        <i data-lucide="maximize-2" class="w-4 h-4 text-wedding-gold"></i>
+                        <span>Ampliar Foto</span>
+                    </div>
+                </div>
+            `;
+            galleryGrid.appendChild(card);
+        });
+
+        // Re-renderizar ícones criados dinamicamente
+        lucide.createIcons();
+
+        // 3. FUNÇÕES DO LIGHTBOX (AMPLIAR E NAVEGAR)
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+
+        function openLightboxByIndex(index) {
+            currentPhotoIndex = index;
+            const photo = galleryPhotos[currentPhotoIndex];
+            openLightbox(photo.id, `Ernesto & Cacilda — ${photo.title}`, true);
+        }
+
+        function openLightbox(fileId, captionText, isFromGallery = false) {
+            lightboxImg.src = `https://lh3.googleusercontent.com/d/${fileId}=w1600`;
+            lightboxImg.onerror = function() {
+                this.onerror = null;
+                this.src = `https://drive.google.com/thumbnail?id=${fileId}&sz=w1600`;
+            };
+            lightboxCaption.textContent = captionText;
+            
+            // Mostra ou esconde setas de navegação dependendo se veio da galeria
+            const navButtons = lightbox.querySelectorAll('button[aria-label="Foto anterior"], button[aria-label="Próxima foto"]');
+            navButtons.forEach(btn => {
+                btn.style.display = isFromGallery ? 'flex' : 'none';
+            });
+
+            lightbox.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event, force = false) {
+            if (force || event.target === lightbox) {
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function navigateLightbox(direction, event) {
+            event.stopPropagation();
+            currentPhotoIndex = (currentPhotoIndex + direction + galleryPhotos.length) % galleryPhotos.length;
+            openLightboxByIndex(currentPhotoIndex);
+        }
+
+        // Suporte a teclado (ESC e Setas)
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox(e, true);
+            if (e.key === 'ArrowRight') navigateLightbox(1, e);
+            if (e.key === 'ArrowLeft') navigateLightbox(-1, e);
+        });
+
+        // 4. COPIAR LINK DA PASTA DO GOOGLE DRIVE
+        function copyDriveLink() {
+            const driveUrl = 'https://drive.google.com/drive/folders/1jtZzXqj7zwkEfxYJgSqKYUon8i7_mVRv?usp=sharing';
+            const textArea = document.createElement('textarea');
+            textArea.value = driveUrl;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+
+            const btnText = document.getElementById('copy-btn-text');
+            const originalText = btnText.textContent;
+            btnText.textContent = 'Link Copiado!';
+            setTimeout(() => {
+                btnText.textContent = originalText;
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
